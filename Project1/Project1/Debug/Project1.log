@@ -1,0 +1,4 @@
+﻿  MyForm.cpp
+  MyForm.obj : /DEBUG:FASTLINK no se admite cuando hay presente código administrado; reiniciando vínculo con /DEBUG:FULL
+  Project1.vcxproj -> C:\Users\Marcelo Gonzalez\documents\visual studio 2015\Projects\Project1\Debug\Project1.exe
+  Project1.vcxproj -> C:\Users\Marcelo Gonzalez\documents\visual studio 2015\Projects\Project1\Debug\Project1.pdb (Partial PDB)
