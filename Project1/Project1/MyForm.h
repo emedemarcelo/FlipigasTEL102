@@ -6,8 +6,7 @@
 #include <sstream>
 #include "PanelAdmin.h"
 #include "Repartidor.h"
-
-
+#include "Panel_Solicitud.h"
 
 namespace Project1 {
 
@@ -45,7 +44,6 @@ namespace Project1 {
 			}
 		}
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
-	protected:
 	private: System::Windows::Forms::RadioButton^  radioButton1;
 	private: System::Windows::Forms::RadioButton^  radioButton2;
 	private: System::Windows::Forms::RadioButton^  radioButton3;
@@ -55,11 +53,6 @@ namespace Project1 {
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::TextBox^  textBox2;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
-
-	protected:
-
-
-	protected:
 
 	private:
 		/// <summary>
@@ -251,6 +244,9 @@ namespace Project1 {
 		this->Hide();
 		if (radioButton1->Checked) {
 			PanelAdmin::PanelAdmin().ShowDialog();
+		}
+		else if (radioButton2->Checked) {
+			Panel_Solicitud::Panel_Solicitud().ShowDialog();
 		}
 		else if (radioButton3->Checked) {
 			Repartidor::Repartidor().ShowDialog();

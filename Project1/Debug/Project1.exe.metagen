@@ -1,5 +1,6 @@
   Project1.MyForm.resources - Embedded, ContainedInManifestFile, 
   Project1.PanelAdmin.resources - Embedded, ContainedInManifestFile, 
+  Project1.Panel_Solicitud.resources - Embedded, ContainedInManifestFile, 
   Project1.Repartidor.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Project1, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
@@ -20,6 +21,9 @@ Class PanelAdmin.PanelAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Project1.Repartidor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project1.Panel_Solicitud: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Project1.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
