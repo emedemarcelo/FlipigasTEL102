@@ -132,12 +132,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camion.cpp" />
+    <ClCompile Include="Galon.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="PanelAdmin.cpp" />
     <ClCompile Include="Panel_Solicitud.cpp" />
     <ClCompile Include="Repartidor.cpp" />
+    <ClCompile Include="Solicitud.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camion.h" />
+    <ClInclude Include="Galon.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -150,6 +155,7 @@
     <ClInclude Include="Repartidor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Solicitud.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
