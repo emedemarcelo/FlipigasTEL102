@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    usuario.cpp
+    usuario.cpp \
+    persona.cpp
 
 HEADERS += \
         mainwindow.h \
-    usuario.h
+    usuario.h \
+    persona.h
 
 FORMS += \
         mainwindow.ui \
