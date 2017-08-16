@@ -27,12 +27,16 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     usuario.cpp \
-    persona.cpp
+    persona.cpp \
+    galon.cpp \
+    camion.cpp
 
 HEADERS += \
         mainwindow.h \
     usuario.h \
-    persona.h
+    persona.h \
+    galon.h \
+    camion.h
 
 FORMS += \
         mainwindow.ui \
