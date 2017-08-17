@@ -18,6 +18,8 @@ void MainWindow::on_EntrarButton_clicked()
     this->hide();
     //user = new Usuario(this);
     //user->show();
-    solicit = new Solicitante(this);
-    solicit->show();
+    //solicit = new Solicitante(this);
+    //solicit->show();
+    administrador = new Admin(this);
+    administrador->show();
 }
