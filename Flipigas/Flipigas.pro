@@ -29,15 +29,18 @@ SOURCES += \
     usuario.cpp \
     persona.cpp \
     galon.cpp \
-    camion.cpp
+    camion.cpp \
+    solicitante.cpp
 
 HEADERS += \
         mainwindow.h \
     usuario.h \
     persona.h \
     galon.h \
-    camion.h
+    camion.h \
+    solicitante.h
 
 FORMS += \
         mainwindow.ui \
-    usuario.ui
+    usuario.ui \
+    solicitante.ui
