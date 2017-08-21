@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::Admin *ui;
+    int ID;
+    std::string name;
 };
 
 #endif // ADMIN_H

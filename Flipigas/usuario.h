@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::Usuario *ui;
+    int ID;
+    std::string name;
 };
 
 #endif // USUARIO_H

@@ -5,6 +5,7 @@
 #include "usuario.h"
 #include "solicitante.h"
 #include "admin.h"
+#include <iostream>
 
 namespace Ui {
 class MainWindow;
@@ -21,11 +22,18 @@ public:
 private slots:
     void on_EntrarButton_clicked();
 
+    void on_user_radioButton_pressed();
+
+    void on_repartidor_radioButton_pressed();
+
+    void on_admin_radioButton_pressed();
+
 private:
     Ui::MainWindow *ui;
     Usuario *user;
     Solicitante *solicit;
     Admin *administrador;
+    int window;
 };
 
 #endif // MAINWINDOW_H
