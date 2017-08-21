@@ -6,6 +6,8 @@ Admin::Admin(QWidget *parent) :
     ui(new Ui::Admin)
 {
     ui->setupUi(this);
+    ID = 1;
+    name = "Marcelo Iván González Henríquez";
 }
 
 Admin::~Admin()

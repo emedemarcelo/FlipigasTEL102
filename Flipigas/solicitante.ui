@@ -65,7 +65,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>NOMBRE_SOLICITANTE</string>
+      <string>José Luis Gallardo Parancán</string>
      </property>
     </widget>
     <widget class="QSpinBox" name="CantCIlindrosBox">

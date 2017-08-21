@@ -6,6 +6,8 @@ Usuario::Usuario(QWidget *parent) :
     ui(new Ui::Usuario)
 {
     ui->setupUi(this);
+    ID = 1;
+    name = "Ignacio Andrés García Peñailillo";
 }
 
 Usuario::~Usuario()

@@ -2,6 +2,7 @@
 #define SOLICITANTE_H
 
 #include <QMainWindow>
+#include <iostream>
 
 namespace Ui {
 class Solicitante;
@@ -15,8 +16,14 @@ public:
     explicit Solicitante(QWidget *parent = 0);
     ~Solicitante();
 
+private slots:
+    void on_CantCIlindrosBox_valueChanged(int arg1);
+
 private:
     Ui::Solicitante *ui;
+    int ID;
+    std::string name;
+    int cantGalones;
 };
 
 #endif // SOLICITANTE_H
