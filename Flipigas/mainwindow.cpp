@@ -42,12 +42,12 @@ void MainWindow::on_EntrarButton_clicked()
     //administrador->show();
 
     if (window == 1){
-        user = new Usuario(this);
-        user->show();
-    }
-    if (window == 2){
         solicit = new Solicitante(this);
         solicit->show();
+    }
+    if (window == 2){
+        user = new Usuario(this);
+        user->show();
     }
 
     if (window == 3){
