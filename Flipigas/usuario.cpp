@@ -1,5 +1,6 @@
 #include "usuario.h"
 #include "ui_usuario.h"
+#include "mainwindow.h"
 
 Usuario::Usuario(QWidget *parent) :
     QMainWindow(parent),
@@ -13,4 +14,11 @@ Usuario::Usuario(QWidget *parent) :
 Usuario::~Usuario()
 {
     delete ui;
+}
+
+void Usuario::on_Volver_clicked()
+{
+    this->hide();
+    MainWindow *main=new MainWindow(this);
+    main->show();
 }

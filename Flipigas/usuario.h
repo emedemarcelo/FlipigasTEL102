@@ -15,6 +15,9 @@ public:
     explicit Usuario(QWidget *parent = 0);
     ~Usuario();
 
+private slots:
+    void on_Volver_clicked();
+
 private:
     Ui::Usuario *ui;
     int ID;
