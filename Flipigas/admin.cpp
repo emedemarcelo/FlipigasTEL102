@@ -8,6 +8,7 @@
 #include <QCompleter>
 #include <QTextStream>
 #include <QComboBox>
+#include <QStringList>
 
 Admin::Admin(QWidget *parent) :
     QMainWindow(parent),
@@ -29,7 +30,10 @@ Admin::Admin(QWidget *parent) :
       }
       inputFile.close();
     }
-    }
+
+    ui->CamionesRepartoTabla->setHorizontalHeaderLabels(QString("Numero de Camion;Cilindros restantes;Solicitudes restantes;Solicitudes atendidas;Tiempo estimado de disponibilidad;Tiempo que demora en atender").split(";"));
+    ui->CamionesRepartoTabla->resizeColumnsToContents();
+}
 
 Admin::~Admin()
 {
@@ -44,12 +48,6 @@ void Admin::VentasQuery(){
     // el csv debe tener de formato CERRO,CATALITICO/NO CATALITICO,LITROS,DINERO. catalitico =0  y no catalitico =1.
 
     QFile ventascsv("db/ventas_prueba.csv");
-
-   /* bool ClassifyWithLt= (ui->CincoLTRadioButton->isChecked() || ui->DiezLTRadioButton->isChecked() || ui->QuinceLTRadioButton->isChecked());
-    bool ClassifyWithTipo= (ui->CataliticoRadioButton->isChecked() || ui->NoCataliticoRadioButton->isChecked());
-    bool ClassifyWithCerro = (ui->CerroBox->currentText().toStdString() != "Escoja cerro...");
-*/
-
     bool ClassifyWithTipo= !ui->AmbosRadioButton->isChecked();
 
     if(ui->CincoLTRadioButton->isChecked()) Litros_Escogido=5;
@@ -81,7 +79,6 @@ void Admin::VentasQuery(){
          int dinero_incsv_std = dinero_incsv.toInt();
 
          if (ClassifyWithTipo== false){
-             std::cout << "holaa" << std::endl;
              if (litros_incsv_std==Litros_Escogido && cerro_incsv_std==Cerro_Escogido){
                  Total_Ventas+=dinero_incsv_std;
              }
@@ -100,9 +97,10 @@ void Admin::VentasQuery(){
       ui->Ventas->setText(QString::number(Total_Ventas));
     }
 
+}
 
+void Admin::CamionesQuery(){
 
-    //std::cout << Cerro_Escogido << " - " << Tipo_Escogido << "-" << Litros_Escogido << std::endl;
 }
 
 void Admin::on_VolverAdminButton_clicked()

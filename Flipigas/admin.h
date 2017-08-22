@@ -15,6 +15,7 @@ public:
     explicit Admin(QWidget *parent = 0);
     ~Admin();
     void VentasQuery();
+    void CamionesQuery();
 
 private slots:
     void on_VolverAdminButton_clicked();
