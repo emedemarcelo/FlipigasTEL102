@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="InformacionTab">
      <attribute name="title">
@@ -422,10 +422,10 @@
      <widget class="QFrame" name="VentasFrame">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>30</x>
         <y>100</y>
         <width>351</width>
-        <height>211</height>
+        <height>131</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -550,97 +550,6 @@
         <string>Ambos</string>
        </property>
       </widget>
-      <widget class="QLabel" name="TamanoLabel">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>136</y>
-         <width>111</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Tamaño (en litros):</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="CincoLTRadioButton">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>136</y>
-         <width>51</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>5</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="DiezLTRadioButton">
-       <property name="geometry">
-        <rect>
-         <x>190</x>
-         <y>130</y>
-         <width>51</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>10</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="QuinceLTRadioButton">
-       <property name="geometry">
-        <rect>
-         <x>240</x>
-         <y>130</y>
-         <width>51</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>15</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="CalcularVentasButton">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>170</y>
-         <width>121</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Calcular ventas</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="SignoPesoLabel">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>170</y>
-         <width>16</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>$</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="Ventas">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>175</y>
-         <width>71</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>12345678</string>
-       </property>
-      </widget>
      </widget>
      <widget class="QFrame" name="BodegaFrame">
       <property name="geometry">
@@ -714,6 +623,113 @@
         <string>Solicitar Reposición</string>
        </property>
       </widget>
+     </widget>
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>230</y>
+        <width>151</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QRadioButton" name="CincoLTRadioButton">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="DiezLTRadioButton">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>40</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>10</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="QuinceLTRadioButton">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>60</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>15</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="TamanoLabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Tamaño (en litros):</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="CalcularVentasButton">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>250</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calcular ventas</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Ventas">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>70</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>12345678</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="SignoPesoLabel">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>65</y>
+        <width>16</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>$</string>
+      </property>
      </widget>
     </widget>
    </widget>
