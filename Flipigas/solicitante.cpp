@@ -13,8 +13,7 @@ Solicitante::Solicitante(QWidget *parent): QMainWindow(parent), ui(new Ui::Solic
     std::fstream fileCerros;
     std::string lineReading;
     std::string theHill;
-    std::string thePath="/home/jose/Documents/FlipigasTEL102/Flipigas/db/cerros.csv"; //Depennds on the DB
-    fileCerros.open(thePath);
+    fileCerros.open("cerros.csv");
     if (fileCerros.is_open()){
         while(!fileCerros.eof()){
             getline(fileCerros, lineReading); //read the entire line, and store it in lineReading String
@@ -63,7 +62,7 @@ void Solicitante::on_CantCIlindrosBox_valueChanged(int arg1) {
 
         QComboBox* comboBoxPeso = new QComboBox();
         QStringList weights;
-        weights << "5 KG" << "11 KG" << "15 KG" << "45 KG";
+        weights << "5" << "10" << "15" ;
         comboBoxPeso->addItems(weights);
 
         ui->TablaPedidos->setCellWidget(actual, 0, comboBoxTipo);

@@ -26,8 +26,8 @@ Usuario::Usuario(QWidget *parent) :
     ui->NombreRepartidor->setText(name);
     //Se llena el camión:
     //Admin debe procesar solicitudes y entregar una csv con la info de galones con los que se debe llenar el camion para realizar el pedido (llenar espacios sobrantes heterogeneamente
-    std::vector <Galon> galons;
-    QFile file("solicitudes.csv");
+    std::vector<Galon> galons;
+    QFile file("Placeres.csv");
     if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
         qDebug() << "File not exists";
     } else {
@@ -35,11 +35,12 @@ Usuario::Usuario(QWidget *parent) :
         while (!in.atEnd())
         {
             QString line = in.readLine();
-            Galon the_galon = Galon(line.split(",")[2].toInt(), line.split(",")[2].toInt());
+            Galon the_galon = Galon(line.split(",")[2].toInt(), line.split(",")[1].toInt());
             galons.push_back(the_galon);
         }
         file.close();
     }
+//    Camion camion = new Camion(1, galons);
 }
 
 Usuario::~Usuario()
@@ -81,7 +82,7 @@ void Usuario::on_UpdateSolicitudesButton_clicked(){
     QStandardItemModel *new_csvModel = new QStandardItemModel(this);
     new_csvModel->setColumnCount(5);
     new_csvModel->setHorizontalHeaderLabels(QStringList() << "ID" << "Cerro" << "Tipo Galón" << "Tamaño Galón" << "Precio");
-    QFile file("solicitudes.csv");
+    QFile file("Placeres.csv");
     if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
         qDebug() << "File not exists";
     } else {
@@ -106,7 +107,7 @@ void Usuario::on_FinalizarEntregaButton_clicked(){
     QStandardItemModel *new_csvModel = new QStandardItemModel(this);
     new_csvModel->setColumnCount(5);
     new_csvModel->setHorizontalHeaderLabels(QStringList() << "ID" << "Cerro" << "Tipo Galón" << "Tamaño Galón" << "Precio");
-    QFile file("solicitudes.csv");
+    QFile file("Placeres.csv");
     //int n_lineas = 1;
     int gallons_delivered_atmoment = 0;
     if ( !file.open(QFile::ReadOnly | QFile::Text) ) {

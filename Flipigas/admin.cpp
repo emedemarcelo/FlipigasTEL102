@@ -18,7 +18,7 @@ Admin::Admin(QWidget *parent) :
     ID = 1;
     name = "Marcelo Iván González Henríquez";
 
-    QFile inputFile("db/cerros.csv");
+    QFile inputFile("cerros.csv");
     if (inputFile.open(QIODevice::ReadOnly))
     {
       QTextStream in(&inputFile);

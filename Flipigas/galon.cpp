@@ -1,4 +1,5 @@
 #include "galon.h"
+#include <iostream>
 
 Galon::Galon() {
 }
@@ -7,6 +8,7 @@ Galon::Galon(int theWeight, int theType) {
     Weight = theWeight;
     Type = theType;
     setPrice();
+    std::cout << "AÑADIDO GALON DE : " << theWeight << std::endl;
 }
 
 Galon::~Galon() {
@@ -17,14 +19,11 @@ void Galon::setPrice() {
     case 5:
         Price = 7000;
         break;
-    case 11:
+    case 10:
         Price = 12000;
         break;
     case 15:
         Price = 17000;
-        break;
-    case 45:
-        Price = 50000;
         break;
     default:
         Price = 0;
