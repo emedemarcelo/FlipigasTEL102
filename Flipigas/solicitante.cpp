@@ -90,7 +90,6 @@ void Solicitante::on_IngresarSolicitudButton_clicked() {
     theFile.open(cerroDestiny+".csv", std::ios::app);
     REQUEST.open("request.csv",std::ios::app);
 
-
     double totalPrice = 0;
 
     if(name != "" && cerroDestiny != "Selecione Cerro" && payMethod != "Seleccione metodo pago"){
