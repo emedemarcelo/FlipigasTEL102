@@ -232,13 +232,26 @@
      <property name="geometry">
       <rect>
        <x>110</x>
-       <y>270</y>
+       <y>250</y>
        <width>151</width>
        <height>71</height>
       </rect>
      </property>
      <property name="text">
       <string>Procesar Solicitud</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="VolverSolicitudButton">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>340</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Volver al menu principal</string>
      </property>
     </widget>
    </widget>

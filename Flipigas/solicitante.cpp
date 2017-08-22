@@ -20,3 +20,10 @@ void Solicitante::on_CantCIlindrosBox_valueChanged(int arg1)
     cantGalones = arg1;
     std::cout << cantGalones << std::endl;
 }
+
+void Solicitante::on_VolverSolicitudButton_clicked()
+{
+    this->hide();
+    QWidget *pariente= this->parentWidget();
+    pariente->show();
+}

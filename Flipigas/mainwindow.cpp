@@ -1,11 +1,17 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QStackedWidget>
+#include <QBoxLayout>
+#include <QComboBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    user = new Usuario(this);
+    solicit = new Solicitante(this);
+    administrador = new Admin(this);
 }
 
 MainWindow::~MainWindow()
@@ -15,43 +21,32 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_user_radioButton_pressed()
 {
-    window = 1;
-    std::cout << window << std::endl;
+
 }
 
 void MainWindow::on_repartidor_radioButton_pressed()
 {
-    window = 2;
-    std::cout << window << std::endl;
+
 }
 
 void MainWindow::on_admin_radioButton_pressed()
 {
-    window = 3;
-    std::cout << window << std::endl;
 }
 
 void MainWindow::on_EntrarButton_clicked()
 {
     this->hide();
-    //user = new Usuario(this);
-    //user->show();
-    //solicit = new Solicitante(this);
-    //solicit->show();
-    //administrador = new Admin(this);
-    //administrador->show();
 
-    if (window == 1){
-        solicit = new Solicitante(this);
+    if (ui->admin_radioButton->isChecked()){
+        administrador->show();
+    }
+
+    else if(ui->user_radioButton->isChecked()){
         solicit->show();
     }
-    if (window == 2){
-        user = new Usuario(this);
+
+    else if(ui->repartidor_radioButton->isChecked()){
         user->show();
     }
 
-    if (window == 3){
-        administrador = new Admin(this);
-        administrador->show();
-    }
 }

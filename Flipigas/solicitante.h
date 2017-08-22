@@ -19,6 +19,8 @@ public:
 private slots:
     void on_CantCIlindrosBox_valueChanged(int arg1);
 
+    void on_VolverSolicitudButton_clicked();
+
 private:
     Ui::Solicitante *ui;
     int ID;

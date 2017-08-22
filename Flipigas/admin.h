@@ -15,6 +15,9 @@ public:
     explicit Admin(QWidget *parent = 0);
     ~Admin();
 
+private slots:
+    void on_VolverAdminButton_clicked();
+
 private:
     Ui::Admin *ui;
     int ID;

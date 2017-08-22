@@ -19,6 +19,6 @@ Usuario::~Usuario()
 void Usuario::on_Volver_clicked()
 {
     this->hide();
-    MainWindow *main=new MainWindow(this);
-    main->show();
+    QWidget *pariente= this->parentWidget();
+    pariente->show();
 }

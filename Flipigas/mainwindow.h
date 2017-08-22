@@ -6,6 +6,7 @@
 #include "solicitante.h"
 #include "admin.h"
 #include <iostream>
+#include <QStackedWidget>
 
 namespace Ui {
 class MainWindow;
@@ -34,6 +35,7 @@ private:
     Solicitante *solicit;
     Admin *administrador;
     int window;
+    QStackedWidget *CambiadorPaginas;
 };
 
 #endif // MAINWINDOW_H
