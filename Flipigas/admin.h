@@ -14,6 +14,7 @@ class Admin : public QMainWindow
 public:
     explicit Admin(QWidget *parent = 0);
     ~Admin();
+    void VentasQuery();
 
 private slots:
     void on_VolverAdminButton_clicked();
