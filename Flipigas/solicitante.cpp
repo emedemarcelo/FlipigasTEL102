@@ -42,28 +42,7 @@ Solicitante::Solicitante(QWidget *parent): QMainWindow(parent), ui(new Ui::Solic
     // END LOGIC PAYMENT METHODS
 
     // Logic for assign solicitud ID
-    int readID;
-    std::string gettingID;
-    std::fstream fileSolicitudes;
-    //thePath = "/home/jose/Documents/FlipigasTEL102/Flipigas/db/solicitudes.csv"; //Depennds on the DB
-    fileSolicitudes.open("solicitudes.csv");
-    if (fileSolicitudes.is_open()){
-        if (fileSolicitudes.eof()){
-            readID = 1;
-        }
-        else{
-            while(!fileSolicitudes.eof()){
-                getline(fileSolicitudes, lineReading); //read the entire line, and store it in lineReading String
-                gettingID = lineReading.substr(0, lineReading.find(','));
-                readID = atoi(gettingID.c_str());
-            }
-        }
-    }
-    else{
-        std::cout << "file could not be opened" << std::endl;
-    }
-    fileSolicitudes.close();
-    ID = readID;
+
     // END ID ASSIGNMENT LOGIC
     std::cout << "Solicitud ID: " << ID << std::endl;
 }
@@ -107,7 +86,8 @@ void Solicitante::on_IngresarSolicitudButton_clicked() {
     int deliverTime = atoi(timeToDeliver.c_str());
 
     std::ofstream theFile;
-    theFile.open("solicitudes.csv", std::ios::app); // Open file in append mode
+    //theFile.open("solicitudes.csv", std::ios::app); // Open file in append mode
+    theFile.open(cerroDestiny+".csv", std::ios::app);
 
     double totalPrice = 0;
 
@@ -131,8 +111,8 @@ void Solicitante::on_IngresarSolicitudButton_clicked() {
             galonPriceConvert << theGalon->getPrice();
             std::string galonPrice = galonPriceConvert.str();
 
-            std::cout << ID << "," << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
-            theFile << ID << "," << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
+            std::cout << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
+            theFile << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
 
             delete theGalon;
         }
