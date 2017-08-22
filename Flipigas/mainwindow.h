@@ -6,6 +6,7 @@
 #include "solicitante.h"
 #include "admin.h"
 #include <iostream>
+#include <fstream>
 #include <QStackedWidget>
 
 namespace Ui {

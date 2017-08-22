@@ -2,7 +2,10 @@
 #define SOLICITANTE_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include <iostream>
+#include <fstream>
+#include "galon.h"
 
 namespace Ui {
 class Solicitante;
@@ -19,6 +22,8 @@ public:
 private slots:
     void on_CantCIlindrosBox_valueChanged(int arg1);
 
+    void on_IngresarSolicitudButton_clicked();
+
     void on_VolverSolicitudButton_clicked();
 
 private:
@@ -29,3 +34,4 @@ private:
 };
 
 #endif // SOLICITANTE_H
+

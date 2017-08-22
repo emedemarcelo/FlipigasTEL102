@@ -2,9 +2,9 @@
 
 ## Homework for the programming seminary course (TEL102), UTFSM, Valparaíso, Chile
 
-This entire project has been coded using Visual Studio 2015 and using C++.
+This entire project has been coded using C++ and QTCreator as IDE.
 
 Made by: Sheriff
-- Churri
-- Dinourg
-- Joseloman
+- MGH
+- JGP
+- IGP
