@@ -41,6 +41,29 @@ Usuario::Usuario(QWidget *parent) :
         file.close();
     }
 //    Camion camion = new Camion(1, galons);
+
+    //logic for updating the Cerros in solicitud view
+    QStringList listCerros;
+    listCerros << "Selecione Cerro";
+    std::fstream fileCerros;
+    std::string lineReading;
+    std::string theHill;
+    fileCerros.open("cerros.csv");
+    if (fileCerros.is_open()){
+        while(!fileCerros.eof()){
+            getline(fileCerros, lineReading); //read the entire line, and store it in lineReading String
+            theHill = lineReading.substr(0, lineReading.find(','));
+            const char* c = theHill.c_str();
+            listCerros << c;
+        }
+    }
+    else{
+        std::cout << "file could not be opened" << std::endl;
+    }
+    fileCerros.close();
+    ui->CerrosRepartidor->addItems(listCerros);
+    // END LOGIC CERROS
+
 }
 
 Usuario::~Usuario()
@@ -82,7 +105,8 @@ void Usuario::on_UpdateSolicitudesButton_clicked(){
     QStandardItemModel *new_csvModel = new QStandardItemModel(this);
     new_csvModel->setColumnCount(5);
     new_csvModel->setHorizontalHeaderLabels(QStringList() << "ID" << "Cerro" << "Tipo Galón" << "Tamaño Galón" << "Precio");
-    QFile file("Placeres.csv");
+    std::string cerroDestiny = ui->CerrosRepartidor->currentText().toUtf8().constData();
+    QFile file("request.csv");
     if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
         qDebug() << "File not exists";
     } else {
@@ -107,7 +131,8 @@ void Usuario::on_FinalizarEntregaButton_clicked(){
     QStandardItemModel *new_csvModel = new QStandardItemModel(this);
     new_csvModel->setColumnCount(5);
     new_csvModel->setHorizontalHeaderLabels(QStringList() << "ID" << "Cerro" << "Tipo Galón" << "Tamaño Galón" << "Precio");
-    QFile file("Placeres.csv");
+    std::string cerroDestiny = ui->CerrosRepartidor->currentText().toUtf8().constData();
+    QFile file("request.csv");
     //int n_lineas = 1;
     int gallons_delivered_atmoment = 0;
     if ( !file.open(QFile::ReadOnly | QFile::Text) ) {

@@ -85,8 +85,11 @@ void Solicitante::on_IngresarSolicitudButton_clicked() {
     int deliverTime = atoi(timeToDeliver.c_str());
 
     std::ofstream theFile;
+    std::ofstream REQUEST;
     //theFile.open("solicitudes.csv", std::ios::app); // Open file in append mode
     theFile.open(cerroDestiny+".csv", std::ios::app);
+    REQUEST.open("request.csv",std::ios::app);
+
 
     double totalPrice = 0;
 
@@ -112,6 +115,7 @@ void Solicitante::on_IngresarSolicitudButton_clicked() {
 
             std::cout << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
             theFile << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
+            REQUEST << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
 
             delete theGalon;
         }
