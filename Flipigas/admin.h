@@ -2,7 +2,17 @@
 #define ADMIN_H
 
 #include <QMainWindow>
-
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+#include <QtCore>
+#include <QtGui>
+#include <QMessageBox>
+#include <QCompleter>
+#include <QTextStream>
+#include <QComboBox>
+#include <QStringList>
+#include <QStandardItemModel>
 namespace Ui {
 class Admin;
 }
@@ -22,10 +32,13 @@ private slots:
 
     void on_CalcularVentasButton_clicked();
 
+    void on_ActualizarCamionesButton_clicked();
+
 private:
     Ui::Admin *ui;
     int ID;
     std::string name;
+    QStandardItemModel *csvModel;
 };
 
 #endif // ADMIN_H

@@ -31,13 +31,13 @@ Admin::Admin(QWidget *parent) :
       inputFile.close();
     }
 
-    ui->CamionesRepartoTabla->setHorizontalHeaderLabels(QString("Numero de Camion;Cilindros restantes;Solicitudes restantes;Solicitudes atendidas;Tiempo estimado de disponibilidad;Tiempo que demora en atender").split(";"));
-    ui->CamionesRepartoTabla->resizeColumnsToContents();
+    CamionesQuery();
 }
 
 Admin::~Admin()
 {
     delete ui;
+    delete csvModel;
 }
 
 void Admin::VentasQuery(){
@@ -101,6 +101,29 @@ void Admin::VentasQuery(){
 
 void Admin::CamionesQuery(){
 
+    csvModel = new QStandardItemModel(this);
+    csvModel->setColumnCount(6);
+    csvModel->setHorizontalHeaderLabels(QStringList() << "Numero de Camion" << "Cilindros restantes" << "Solicitudes restantes" << "Solicitudes atendidas" << "Tiempo estimado de disponibilidad" << "Tiempo que demora en atender");
+    ui->CamionesRepartoTabla->QTableView::setModel(csvModel);
+    ui->CamionesRepartoTabla->resizeColumnsToContents();
+    ui->CamionesRepartoTabla->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    QFile file("db/camiones_enmarcha.csv");
+    if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
+        qDebug() << "File not exists";
+    } else {
+        QTextStream in(&file);
+        while (!in.atEnd())
+        {
+            QString line = in.readLine();
+            QList<QStandardItem *> standardItemsList;
+            for (QString item : line.split(",")) {
+                standardItemsList.append(new QStandardItem(item));
+            }
+            csvModel->insertRow(csvModel->rowCount(), standardItemsList);
+        }
+        file.close();
+    }
 }
 
 void Admin::on_VolverAdminButton_clicked()
@@ -114,4 +137,9 @@ void Admin::on_VolverAdminButton_clicked()
 void Admin::on_CalcularVentasButton_clicked()
 {
     VentasQuery();
+}
+
+void Admin::on_ActualizarCamionesButton_clicked()
+{
+    CamionesQuery();
 }
