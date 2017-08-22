@@ -14,14 +14,15 @@ int charToInt(const char theChar) {
 Camion::Camion() {
 }
 
-Camion::Camion(int theType) {
+Camion::Camion(int theType, std::vector<Galon> thegalons) {
     setID();
     type = theType;
     setCapacity(type);
-    isDelivering = false;
+    isDelivering = true;
     idSolicitud = 0;
     timeToRefill = 0;
     refill = false;
+    galons = thegalons;
 }
 
 Camion::~Camion() {

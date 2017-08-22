@@ -28,6 +28,7 @@ private:
     std::string name;
     QStandardItemModel *csvModel;
     int gallons_delivered = 0;
+    Camion camion;
 };
 
 #endif // USUARIO_H

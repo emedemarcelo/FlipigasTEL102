@@ -23,7 +23,7 @@ public:
     * @brief Constructor para un determinado tipo de camión.
     * @param theType (int) El tipo de camión (1: A (mayor capacidad), 2: B (media capacidad), 3: C (baja capacidad)).
     */
-    Camion(int theType);
+    Camion(int theType, std::vector <Galon> thegalons);
 
     /*
     * @brief Destructor por defecto

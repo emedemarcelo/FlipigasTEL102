@@ -1,12 +1,14 @@
 #include "usuario.h"
 #include "ui_usuario.h"
 #include "mainwindow.h"
+#include "galon.h"
 #include <QApplication>
 #include <QListWidget>
 #include <QString>
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 Usuario::Usuario(QWidget *parent) :
     QMainWindow(parent),
@@ -14,13 +16,30 @@ Usuario::Usuario(QWidget *parent) :
 {
     ui->setupUi(this);
     ID = 1;
-    name = "Ignacio Andrés García Peñailillo";
+    QString name = "Ignacio Andrés García Peñailillo";
     csvModel = new QStandardItemModel(this);
     csvModel->setColumnCount(5);
     csvModel->setHorizontalHeaderLabels(QStringList() << "ID" << "Cerro" << "Tipo Galón" << "Tamaño Galón" << "Precio");
     ui->tableWidget->QTableView::setModel(csvModel);
     ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->NombreRepartidor->setText(name);
+    //Se llena el camión:
+    //Admin debe procesar solicitudes y entregar una csv con la info de galones con los que se debe llenar el camion para realizar el pedido (llenar espacios sobrantes heterogeneamente
+    std::vector <Galon> galons;
+    QFile file("solicitudes.csv");
+    if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
+        qDebug() << "File not exists";
+    } else {
+        QTextStream in(&file);
+        while (!in.atEnd())
+        {
+            QString line = in.readLine();
+            Galon the_galon = Galon(line.split(",")[2].toInt(), line.split(",")[2].toInt());
+            galons.push_back(the_galon);
+        }
+        file.close();
+    }
 }
 
 Usuario::~Usuario()

@@ -17,7 +17,7 @@ public:
     * @brief Constructor para un determinado tipo de galón
     * @param theWeight Peso del galón (int).
     */
-    Galon(int, bool);
+    Galon(int, int);
 
     /*
     * @brief Destructor por defecto
@@ -37,7 +37,7 @@ public:
 private:
     int Weight;/**< Capacidad del galón. (5, 11, 15 y 45 [kg]). */
     double Price; /**< Precio del galón en función de su peso. */
-    bool Type; /**< Tipo de galón (True: Catalítico - False: No Catalítico). */
+    int Type; /**< Tipo de galón (True: Catalítico - False: No Catalítico). */
 };
 
 

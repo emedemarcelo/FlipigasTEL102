@@ -3,7 +3,7 @@
 Galon::Galon() {
 }
 
-Galon::Galon(int theWeight, bool theType) {
+Galon::Galon(int theWeight, int theType) {
     Weight = theWeight;
     Type = theType;
     setPrice();
