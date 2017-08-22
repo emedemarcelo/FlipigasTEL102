@@ -20,6 +20,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    int window;
 
 private slots:
     void on_EntrarButton_clicked();
@@ -30,12 +31,13 @@ private slots:
 
     void on_admin_radioButton_pressed();
 
+    int getSolicitudesHechas();
+
 private:
     Ui::MainWindow *ui;
     Usuario *user;
     Solicitante *solicit;
     Admin *administrador;
-    int window;
     QStackedWidget *CambiadorPaginas;
 };
 

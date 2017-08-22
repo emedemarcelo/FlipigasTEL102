@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="InformacionTab">
      <attribute name="title">
@@ -125,7 +125,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>XYZ</string>
+        <string>0</string>
        </property>
       </widget>
       <widget class="QLabel" name="CantidadSolicitudesAct">
@@ -138,7 +138,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>XXXXXX</string>
+        <string>0</string>
        </property>
       </widget>
       <widget class="QLabel" name="CantidadSolicitudesAtt">
@@ -151,7 +151,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>YYYYYY</string>
+        <string>0</string>
        </property>
       </widget>
       <widget class="QLabel" name="TiempoDisponibilidadCamion">
@@ -164,7 +164,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>XYZ</string>
+        <string>0</string>
        </property>
       </widget>
       <widget class="QLabel" name="minutosLabel1">
@@ -196,7 +196,7 @@
       <widget class="QPushButton" name="VolverAdminButton">
        <property name="geometry">
         <rect>
-         <x>190</x>
+         <x>290</x>
          <y>170</y>
          <width>151</width>
          <height>31</height>
@@ -204,6 +204,19 @@
        </property>
        <property name="text">
         <string>Volver al menu anterior</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ActualizarButton">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>170</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Actualizar</string>
        </property>
       </widget>
      </widget>
@@ -552,7 +565,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>XYZWY</string>
+        <string>100000</string>
        </property>
       </widget>
       <widget class="QPushButton" name="SolicitarReposicionButton">
@@ -660,7 +673,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>12345678</string>
+       <string>0</string>
       </property>
      </widget>
      <widget class="QLabel" name="SignoPesoLabel">

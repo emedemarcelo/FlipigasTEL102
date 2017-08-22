@@ -50,3 +50,7 @@ void MainWindow::on_EntrarButton_clicked()
     }
 
 }
+
+int MainWindow::getSolicitudesHechas(){
+    return user->getGallonsDelivered();
+}

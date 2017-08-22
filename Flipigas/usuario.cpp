@@ -163,6 +163,10 @@ void Usuario::on_FinalizarEntregaButton_clicked(){
     std::cout << "GALLONS DELIVERED : " << gallons_delivered << std::endl;
 }
 
+int Usuario::getGallonsDelivered(){
+    return gallons_delivered;
+}
+
 void Usuario::on_Volver_clicked()
 {
     this->hide();

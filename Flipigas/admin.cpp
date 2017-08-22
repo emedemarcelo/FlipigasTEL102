@@ -1,6 +1,7 @@
 #include "admin.h"
 #include "ui_admin.h"
 #include "mainwindow.h"
+#include "usuario.h"
 
 #include <QtCore>
 #include <QtGui>
@@ -47,7 +48,7 @@ void Admin::VentasQuery(){
 
     // el csv debe tener de formato CERRO,CATALITICO/NO CATALITICO,LITROS,DINERO. catalitico =0  y no catalitico =1.
 
-    QFile ventascsv("db/ventas_prueba.csv");
+    QFile ventascsv("request.csv");
     bool ClassifyWithTipo= !ui->AmbosRadioButton->isChecked();
 
     if(ui->CincoLTRadioButton->isChecked()) Litros_Escogido=5;
@@ -131,7 +132,6 @@ void Admin::on_VolverAdminButton_clicked()
     this->hide();
     QWidget *pariente= this->parentWidget();
     pariente->show();
-
 }
 
 void Admin::on_CalcularVentasButton_clicked()
@@ -142,4 +142,9 @@ void Admin::on_CalcularVentasButton_clicked()
 void Admin::on_ActualizarCamionesButton_clicked()
 {
     CamionesQuery();
+}
+
+void Admin::on_ActualizarButton_clicked()
+{
+    //ui->CantidadSolicitudesAtt->setText(QString::number());
 }

@@ -16,11 +16,13 @@ class Usuario : public QMainWindow
 public:
     explicit Usuario(QWidget *parent = 0);
     ~Usuario();
+    int getGallonsDelivered();
 
 private slots:
     void on_Volver_clicked();
     void on_UpdateSolicitudesButton_clicked();
     void on_FinalizarEntregaButton_clicked();
+
 
 private:
     Ui::Usuario *ui;

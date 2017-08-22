@@ -34,6 +34,8 @@ private slots:
 
     void on_ActualizarCamionesButton_clicked();
 
+    void on_ActualizarButton_clicked();
+
 private:
     Ui::Admin *ui;
     int ID;
