@@ -2,6 +2,8 @@
 #define USUARIO_H
 
 #include <QMainWindow>
+#include <QStandardItemModel>
+#include "camion.h"
 
 namespace Ui {
 class Usuario;
@@ -17,11 +19,15 @@ public:
 
 private slots:
     void on_Volver_clicked();
+    void on_UpdateSolicitudesButton_clicked();
+    void on_FinalizarEntregaButton_clicked();
 
 private:
     Ui::Usuario *ui;
     int ID;
     std::string name;
+    QStandardItemModel *csvModel;
+    int gallons_delivered = 0;
 };
 
 #endif // USUARIO_H

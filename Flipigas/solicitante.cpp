@@ -45,8 +45,8 @@ Solicitante::Solicitante(QWidget *parent): QMainWindow(parent), ui(new Ui::Solic
     int readID;
     std::string gettingID;
     std::fstream fileSolicitudes;
-    thePath = "/home/jose/Documents/FlipigasTEL102/Flipigas/db/solicitudes.csv"; //Depennds on the DB
-    fileSolicitudes.open(thePath);
+    //thePath = "/home/jose/Documents/FlipigasTEL102/Flipigas/db/solicitudes.csv"; //Depennds on the DB
+    fileSolicitudes.open("solicitudes.csv");
     if (fileSolicitudes.is_open()){
         if (fileSolicitudes.eof()){
             readID = 1;
@@ -107,8 +107,7 @@ void Solicitante::on_IngresarSolicitudButton_clicked() {
     int deliverTime = atoi(timeToDeliver.c_str());
 
     std::ofstream theFile;
-    std::string thePath = "/home/jose/Documents/FlipigasTEL102/Flipigas/db/solicitudes.csv"; //Depennds on the DB
-    theFile.open(thePath, std::ios::app); // Open file in append mode
+    theFile.open("solicitudes.csv", std::ios::app); // Open file in append mode
 
     double totalPrice = 0;
 
