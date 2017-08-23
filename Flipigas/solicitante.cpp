@@ -43,7 +43,7 @@ Solicitante::Solicitante(QWidget *parent): QMainWindow(parent), ui(new Ui::Solic
     // Logic for assign solicitud ID
 
     // END ID ASSIGNMENT LOGIC
-    std::cout << "Solicitud ID: " << ID << std::endl;
+    //std::cout << "Solicitud ID: " << ID << std::endl;
 }
 
 Solicitante::~Solicitante() {
@@ -112,7 +112,7 @@ void Solicitante::on_IngresarSolicitudButton_clicked() {
             galonPriceConvert << theGalon->getPrice();
             std::string galonPrice = galonPriceConvert.str();
 
-            std::cout << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
+            //std::cout << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
             theFile << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
             REQUEST << cerroDestiny << "," << typeGalon << "," << theWeight << "," << galonPrice << std::endl;
 
@@ -147,7 +147,7 @@ void Solicitante::on_IngresarSolicitudButton_clicked() {
         ui->TablaPedidos->removeRow(filas);
     }
 
-    std::cout << "Before exit! " << std::endl;
+    //std::cout << "Before exit! " << std::endl;
 
 }
 

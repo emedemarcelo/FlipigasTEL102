@@ -27,7 +27,7 @@ Usuario::Usuario(QWidget *parent) :
     //Se llena el camión:
     //Admin debe procesar solicitudes y entregar una csv con la info de galones con los que se debe llenar el camion para realizar el pedido (llenar espacios sobrantes heterogeneamente
     std::vector<Galon> galons;
-    QFile file("Placeres.csv");
+    QFile file("Los Placeres.csv");
     if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
         qDebug() << "File not exists";
     } else {
@@ -58,7 +58,7 @@ Usuario::Usuario(QWidget *parent) :
         }
     }
     else{
-        std::cout << "file could not be opened" << std::endl;
+        //std::cout << "file could not be opened" << std::endl;
     }
     fileCerros.close();
     ui->CerrosRepartidor->addItems(listCerros);
@@ -101,7 +101,7 @@ Usuario::~Usuario()
 
 
 void Usuario::on_UpdateSolicitudesButton_clicked(){
-    std::cout << "UPDATE" << std::endl;
+    //std::cout << "UPDATE" << std::endl;
     QStandardItemModel *new_csvModel = new QStandardItemModel(this);
     new_csvModel->setColumnCount(5);
     new_csvModel->setHorizontalHeaderLabels(QStringList() << "ID" << "Cerro" << "Tipo Galón" << "Tamaño Galón" << "Precio");
@@ -127,7 +127,7 @@ void Usuario::on_UpdateSolicitudesButton_clicked(){
 }
 
 void Usuario::on_FinalizarEntregaButton_clicked(){
-    std::cout << "DELIVER" << std::endl;
+    //std::cout << "DELIVER" << std::endl;
     QStandardItemModel *new_csvModel = new QStandardItemModel(this);
     new_csvModel->setColumnCount(5);
     new_csvModel->setHorizontalHeaderLabels(QStringList() << "ID" << "Cerro" << "Tipo Galón" << "Tamaño Galón" << "Precio");
@@ -140,10 +140,10 @@ void Usuario::on_FinalizarEntregaButton_clicked(){
     } else {
         QTextStream in(&file);
         while (!in.atEnd()){
-            std::cout << "MOVIENTO SOLICITUD" << std::endl;
+            //std::cout << "MOVIENTO SOLICITUD" << std::endl;
             QList<QStandardItem *> standardItemsList;
             if (gallons_delivered_atmoment <= gallons_delivered){
-                std::cout << "ELIMINANDO PRIMERA LINEA" << std::endl;
+                //std::cout << "ELIMINANDO PRIMERA LINEA" << std::endl;
                 gallons_delivered_atmoment++;
                 QString line = in.readLine();
             }
@@ -160,7 +160,7 @@ void Usuario::on_FinalizarEntregaButton_clicked(){
         file.close();
     }
     gallons_delivered = gallons_delivered_atmoment;
-    std::cout << "GALLONS DELIVERED : " << gallons_delivered << std::endl;
+    //std::cout << "GALLONS DELIVERED : " << gallons_delivered << std::endl;
 }
 
 int Usuario::getGallonsDelivered(){

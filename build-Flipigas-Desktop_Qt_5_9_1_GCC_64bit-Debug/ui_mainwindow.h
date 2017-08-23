@@ -53,7 +53,7 @@ public:
         user_radioButton->setGeometry(QRect(20, 50, 84, 19));
         repartidor_radioButton = new QRadioButton(Button_MainFrame);
         repartidor_radioButton->setObjectName(QStringLiteral("repartidor_radioButton"));
-        repartidor_radioButton->setGeometry(QRect(20, 80, 84, 19));
+        repartidor_radioButton->setGeometry(QRect(20, 80, 101, 19));
         admin_radioButton = new QRadioButton(Button_MainFrame);
         admin_radioButton->setObjectName(QStringLiteral("admin_radioButton"));
         admin_radioButton->setGeometry(QRect(20, 110, 84, 19));
@@ -90,7 +90,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Flipigas", Q_NULLPTR));
-        user_radioButton->setText(QApplication::translate("MainWindow", "Usuario", Q_NULLPTR));
+        user_radioButton->setText(QApplication::translate("MainWindow", "Solicitud", Q_NULLPTR));
         repartidor_radioButton->setText(QApplication::translate("MainWindow", "Repartidor", Q_NULLPTR));
         admin_radioButton->setText(QApplication::translate("MainWindow", "Admin", Q_NULLPTR));
         Enter_MainFrame->setText(QApplication::translate("MainWindow", "Entrar como:", Q_NULLPTR));

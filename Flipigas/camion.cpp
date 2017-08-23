@@ -38,7 +38,7 @@ void Camion::setID() {
         }
     }
     else {
-        std::cout << "Unable to open file!" << std::endl;
+        //std::cout << "Unable to open file!" << std::endl;
     }
     theFile.close();
     id = lastID;
